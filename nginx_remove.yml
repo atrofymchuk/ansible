@@ -1,0 +1,15 @@
+---
+
+- name: Remove NGINX
+  hosts: all
+  become: yes
+  tasks:
+    - name: Stop NGINX
+      ansible.builtin.service:
+        name: nginx
+        state: stopped
+    - name: Remove NGINX
+      ansible.builtin.apt:
+        name: nginx
+        state: absent
+        autoremove: yes

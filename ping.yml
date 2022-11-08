@@ -1,0 +1,9 @@
+---
+- name: Install jenkins and Nexus
+  hosts: all
+  become: false
+
+  tasks:
+  - name: Ping my server
+    ping:
+
